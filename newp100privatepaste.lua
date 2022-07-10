@@ -1,9 +1,15 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/xHUNAJAx/Roblox/main/xYoa%20Internal%20lib.lua')))()
 
 local Window = OrionLib:MakeWindow({Name = tostring("xYoa Internal"), HidePremium = false, SaveConfig = false})
 
 local Tab = Window:MakeTab({
-        Name = "Main",
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Tab = Window:MakeTab({
+        Name = "Visuals",
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
 })
@@ -23,7 +29,7 @@ Tab:AddToggle({
 	Callback = function(Value)
 		if getgenv().esp_loaded == false and Value == true then
             getgenv().esp_loaded = true
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/skatbr/Roblox-Releases/main/A_simple_esp.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xHUNAJAx/Roblox/main/Simple%20esp.lua", true))()
         end
 		getgenv().Visibility = Value
 	end    
@@ -35,7 +41,7 @@ Tab:AddToggle({
 	Callback = function(Value)
 		if getgenv().esp_loaded == false and Value == true then
             getgenv().esp_loaded = true
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/skatbr/Roblox-Releases/main/A_simple_esp.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xHUNAJAx/Roblox/main/Simple%20esp.lua", true))()
         end
 		getgenv().boxESP = Value
 	end    
@@ -48,7 +54,7 @@ Tab:AddToggle({
 	Callback = function(Value)
 		if getgenv().esp_loaded == false and Value == true then
             getgenv().esp_loaded = true
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/skatbr/Roblox-Releases/main/A_simple_esp.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xHUNAJAx/Roblox/main/Simple%20esp.lua", true))()
         end
 		getgenv().nameESP = Value
 	end    
@@ -61,7 +67,7 @@ Tab:AddToggle({
 	Callback = function(Value)
 		if getgenv().esp_loaded == false and Value == true then
             getgenv().esp_loaded = true
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/skatbr/Roblox-Releases/main/A_simple_esp.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xHUNAJAx/Roblox/main/Simple%20esp.lua", true))()
         end
 		getgenv().cham = Value
 	end    
@@ -87,7 +93,34 @@ Tab:AddToggle({
         end
 })
 
+local infoButton = Tab:AddButton({
+    Name = "FieldOfView to 120",
+    Callback = function()
+        game.Workspace.Camera.FieldOfView = 120
+end
+})
 
+local Tab = Window:MakeTab({
+    Name = "Info",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local infoButton = Tab:AddButton({
+    Name = "xYoa Internal Made by Bonk x xHUNAJAx",
+    Callback = function()
+        setclipboard("https://discord.gg/GZt7aHg8qf")
+
+                
+        wait(1)
+
+        OrionLib:MakeNotification({
+            Name = "copying discord...",
+            Content = "!!!DISCORD LINK COPIED!!!",
+            Time = 3
+        })
+end
+})
 
 local orionion = game:GetService("CoreGui"):FindFirstChild("Orion")
 
