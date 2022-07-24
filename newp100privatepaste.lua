@@ -1,12 +1,29 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/xHUNAJAx/Roblox/main/xYoa%20Internal%20lib.lua')))()
 
-local Window = OrionLib:MakeWindow({Name = tostring("xYoa Internal"), HidePremium = false, SaveConfig = false})
+local Window = OrionLib:MakeWindow({Name = tostring("xYoa Internal"), HidePremium = true, SaveConfig = false})
 
 local Tab = Window:MakeTab({
     Name = "Main",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
+
+local infoButton = Tab:AddButton({
+    Name = "SuperMan",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+end
+})
+
+local infoButton = Tab:AddButton({
+    Name = "Too retarded to make toggle xd",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end
+})
+
 
 local Tab = Window:MakeTab({
         Name = "Visuals",
@@ -97,6 +114,13 @@ local infoButton = Tab:AddButton({
     Name = "FieldOfView to 120",
     Callback = function()
         game.Workspace.Camera.FieldOfView = 120
+end
+})
+
+local infoButton = Tab:AddButton({
+    Name = "Reset FieldOfView",
+    Callback = function()
+        game.Workspace.Camera.FieldOfView = 70
 end
 })
 
